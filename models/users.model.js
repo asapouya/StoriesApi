@@ -22,14 +22,12 @@ const users_schema = new Schema({
         min: 8,
         max: 1024
     },
-    stories: {
-        type: [Schema.Types.ObjectId],
-        ref: "stories",
-        default: []
+    admin: {
+        type: Boolean
     }
 })
 
-users_schema.methods = async function hash(){
+users_schema.methods.hash = async function(){
     return await bcrypt.hash(this.password, 10);
 }
 

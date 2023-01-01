@@ -5,7 +5,7 @@ module.exports = {
     validate_users: async (user_object) => {
 
         let schema = joi.object({
-            user_name: joi.string()
+            username: joi.string()
                 .regex(/^\S*$/)
                 .required()
                 .min(3)
