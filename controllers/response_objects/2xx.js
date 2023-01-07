@@ -1,6 +1,6 @@
 class Success {
     
-    201(obj) {
+    static 201(obj) {
         return {
             state: "Created",
             data: obj

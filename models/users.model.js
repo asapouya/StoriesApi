@@ -27,9 +27,5 @@ const users_schema = new Schema({
     }
 })
 
-users_schema.methods.hash = async function(){
-    return await bcrypt.hash(this.password, 10);
-}
-
 const Users = model("users", users_schema);
 module.exports = Users;

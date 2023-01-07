@@ -16,9 +16,9 @@ module.exports = {
             publisher: joi.string()
                 .required()
                 .max(128),
-            // genre: joi.array()
-            //     .items(joi.string().required())
-            //     .required(),
+            genre: joi.array()
+                .items(joi.string().required())
+                .required(),
             summary: joi.string()
                 .required()
                 .max(4096)

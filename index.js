@@ -36,4 +36,6 @@ app.use("/v1/books", books_router);
 app.use(error_middleware);
 
 const port = process.env.PORT || 8888;
-app.listen(port, () => console.info(`listening on port ${port}`));
+const server = app.listen(port, () => console.info(`listening on port ${port}`));
+
+module.exports = server;

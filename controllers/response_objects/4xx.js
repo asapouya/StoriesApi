@@ -1,15 +1,15 @@
 class ClientError {
     
-    404(obj) {
+    static 404(obj) {
         return {
             state: "Not found",
             data: obj
         }
     }
 
-    401() {
+    static 401() {
         return {
-            state: "Forbidden",
+            state: "Unauthorized",
             data: {
                 message: "You don't have access to this endpoint"
             }
