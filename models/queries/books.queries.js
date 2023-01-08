@@ -11,6 +11,10 @@ class Books_Queries extends Queries{
         book_object.book_pdf_dir = file_path;
         return await super.create_entry(book_object, Books);
     }
+
+    static async find_many(){
+        return await super.find_many(Books, {book_pdf_dir: 0, __v: 0});
+    }
 }
 
 module.exports = Books_Queries;

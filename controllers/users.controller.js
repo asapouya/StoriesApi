@@ -3,7 +3,6 @@ const _ = require("lodash");
 const jwt_token_generate = require("../auth/jwt_token_generate");
 const { create_entry, find_many } = require("../models/queries/users.queries");
 
-//Seccessful response object - 2xx
 const Success = require("./response_objects/2xx");
 
 module.exports = {
