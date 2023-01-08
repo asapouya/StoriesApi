@@ -1,7 +1,7 @@
 const Books = require("../books.model");
 const Queries = require("./queries");
 const { validate_books } = require("../../validation/books.validation")
-const file_upload = require("../../middlewares/file.middleware");
+const {file_upload} = require("../../middlewares/file.middleware");
 
 class Books_Queries extends Queries{
     

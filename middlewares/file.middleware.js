@@ -1,4 +1,5 @@
 const path = require("path");
+const config = require("config");
 
 module.exports = {
     
@@ -7,8 +8,7 @@ module.exports = {
         if(req.files.file.mimetype !== "application/pdf") return res.status(400).send("Please send pdf file.");
         const file = req.files.file;
         const file_name = file.name;
-        const file_path = path.join(__dirname, "..", "pdfs", `${Date.now() + file_name}`);
-        console.log(file);
+        const file_path = path.join(config.get("pdf_path"), `${Date.now() + file_name}`);
         file.mv(file_path, (err) => {
             if (err) return res.status(400).send(err);
         })

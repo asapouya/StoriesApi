@@ -1,3 +1,4 @@
 {
-    "mongo_url": "mongodb+srv://asapouya:Gozgoz1234@storiescluster.euhfaq8.mongodb.net/test?retryWrites=true&w=majority"
+    "mongo_url": "mongodb+srv://asapouya:Gozgoz1234@storiescluster.euhfaq8.mongodb.net/test?retryWrites=true&w=majority",
+    "pdf_path": "/home/asapouya/Desktop/StoriesApi/pdfs/pdf_test"
 }
