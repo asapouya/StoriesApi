@@ -3,11 +3,8 @@ const { Schema, model } = require("mongoose");
 const comments_schema = new Schema({
     commenter: {
         type: Schema.Types.ObjectId,
-        required: true
-    },
-
-    replied_to: {
-        type: Schema.Types.ObjectId
+        required: true,
+        ref: "users"
     },
     comment: {
         type: String,

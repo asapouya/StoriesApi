@@ -15,6 +15,15 @@ class ClientError {
             }
         }
     }
+
+    static 400(message){
+        return {
+            state: "Bad request",
+            data: {
+                message: message
+            }
+        }
+    }
 }
 
 module.exports = ClientError;

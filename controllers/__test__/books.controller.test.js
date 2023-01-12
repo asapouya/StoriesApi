@@ -1,9 +1,8 @@
 let server;
 const request = require("supertest");
 const Books = require("../../models/books.model");
-const generate_jwt_admin = require("../../auth/jwt_token_generate_admin");
+const {generate_admin_token} = require("../../auth/jwt");
 const mongoose = require("mongoose");
-const fs = require("fs");
 const fsExtra = require("fs-extra");
 
 describe("/v1/books", () => {
@@ -20,7 +19,7 @@ describe("/v1/books", () => {
         it("should post a new book", async () => {
             
             const _id = new mongoose.Types.ObjectId().toHexString();
-            const token = generate_jwt_admin(_id, true);
+            const token = generate_admin_token(_id, true);
             
             const res = await request(server)
                 .post("/v1/books")

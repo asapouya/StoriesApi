@@ -7,7 +7,6 @@ const books_router = require("./routes/books.routes");
 const auth_router = require("./routes/auth.routes");
 const error_middleware = require("./middlewares/catch_error");
 
-// const upload_middleware = require("express-fileupload");
 const express_file_upload = require("express-fileupload");
 
 const databaseConnect = require("./models/database.connection");
@@ -23,11 +22,6 @@ databaseConnect();
 
 app.use(helmet());
 app.use(express.json());
-
-// app.use(upload_middleware({
-//     useTempFiles : true,
-//     tempFileDir : __dirname + "/pdf/tmp"
-// }));
 app.use(express_file_upload());
 
 app.use("/v1/users", users_router);

@@ -1,7 +1,7 @@
 const joi = require("joi");
 
 module.exports = {
-    validate_books: async (obj) => {
+    async validate_books (obj) {
 
         const books_schema = joi.object({
 

@@ -2,7 +2,7 @@ const joi = require("joi");
 const password_complexity = require("joi-password-complexity");
 
 module.exports = {
-    validate_users: async (user_object) => {
+    async validate_users (user_object){
 
         let schema = joi.object({
             username: joi.string()

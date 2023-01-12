@@ -14,6 +14,10 @@ class Users_queries extends Queries{
     static async find_many(){
         return await super.find_many(Users, {password: 0, __v: 0});
     }
+
+    static async find_one(search_value){
+        return await super.find_one(search_value, Users);
+    }
 }
 module.exports = Users_queries;
 
