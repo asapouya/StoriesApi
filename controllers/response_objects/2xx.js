@@ -6,6 +6,14 @@ class Success {
             data: obj
         }
     }
+    static 200(message) {
+        return {
+            state: "Success",
+            data: {
+                message: message
+            }
+        }
+    }
 }
 
 module.exports = Success;

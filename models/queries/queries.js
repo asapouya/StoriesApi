@@ -9,5 +9,8 @@ class Queries{
     static async find_one(search_value ,DataBase_model, ...options){
         return await DataBase_model.findOne(search_value, ...options).collation({locale: "en_US", strength: 2});
     }
+    static async find_one_and_update(search_value, entry_object ,DataBase_model, ...options){
+        return await DataBase_model.findOneAndUpdate(search_value, entry_object, ...options);
+    }
 }
 module.exports = Queries;

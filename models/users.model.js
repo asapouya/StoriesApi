@@ -22,6 +22,10 @@ const users_schema = new Schema({
         min: 8,
         max: 1024
     },
+    confirmed: {
+        type: Boolean,
+        default: false
+    },
     admin: {
         type: Boolean
     }

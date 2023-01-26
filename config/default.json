@@ -1,6 +1,7 @@
 {
     "JWT_PRIVATE_KEY": "",
     "MONGO_PASSWORD": "",
+    "EMAIL_PASSWORD": "",
     "mongo_url": "mongodb+srv://asapouya:Gozgoz1234@storiescluster.euhfaq8.mongodb.net/Stories?retryWrites=true&w=majority",
     "pdf_path": "/home/asapouya/Desktop/StoriesApi/pdfs"
 }

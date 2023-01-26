@@ -18,6 +18,10 @@ class Users_queries extends Queries{
     static async find_one(search_value){
         return await super.find_one(search_value, Users);
     }
+
+    static async find_one_and_update(search_value, entry_object){
+        return await super.find_one_and_update(search_value, entry_object, Users);
+    }
 }
 module.exports = Users_queries;
 
