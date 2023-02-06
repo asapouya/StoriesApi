@@ -1,0 +1,16 @@
+swagger: "2.0"
+info: 
+  title: Books API
+  description: A mock book store api that you can download books from as pdf files.
+  version: 1.0.0
+
+host: http://localhost:8888
+basePath: /v1
+schemes: 
+  - http
+
+paths:
+  /users:
+    post:
+      summary: Creates a new user entry.
+      

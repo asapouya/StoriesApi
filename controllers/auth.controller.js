@@ -18,7 +18,8 @@ module.exports = {
         if(!valid_password) return res.status(404).send(ClientError[404]({ message: "User not found." }));
         if(!user.confirmed) {
             //confirmation email
-            res.status(400).send(ClientError[400]("Please Confirm your account to login."));
+            const token = generate_token(user._id);
+            res.status(400).send(ClientError[400](`Please Confirm your account to login. nodemailer doesn't work so here's your link => http://localhost:8888/v1/auth/confirmation/${token}`));
         }
         let token = null;
         if(user.admin){
@@ -30,11 +31,10 @@ module.exports = {
         res.status(204).header("X-auth-token", token).send();
     }),
 
-    get_confirmation: remove_tryCatch(async (req, res) => {
+    update_confirmation: remove_tryCatch(async (req, res) => {
         const token = req.params.token;
         const { _id } = verify_token(token);
-
-        await find_one_and_update({_id, _id}, {confirmed: true});
+        await find_one_and_update({_id: _id}, {confirmed: true});
         res.status(200).send(Success[200]("Account confirmed."));
     })
 }
